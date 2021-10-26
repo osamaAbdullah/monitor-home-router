@@ -9,12 +9,8 @@ use Tests\DuskTestCase;
 
 class LoginTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
-    public function testExample()
+
+    public function test_toggle()
     {
         $this->browse(function (Browser $browser) {
             $b = $browser->visit('http://192.168.1.1/')
@@ -27,7 +23,7 @@ class LoginTest extends DuskTestCase
             $b->script("document.getElementById('mainFrame').contentWindow.document.getElementById('menu2').firstChild.children[2].click()");
             $b->pause(5000);
             $b->script("document.getElementById('mainFrame').contentWindow.document.getElementById('Frm_ServerEnable').click()");
-            $b->pause(7000);
+            $b->pause(10000);
         });
 
     }
